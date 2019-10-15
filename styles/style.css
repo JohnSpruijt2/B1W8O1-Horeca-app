@@ -1,6 +1,10 @@
 body {
     background-color: rgb(164, 164, 164);
 }
+.billing {
+    margin-right: 20px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
 #title {
     font-size: 80px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -12,4 +16,10 @@ body {
 #page {
     margin: 0px auto;
     width: 50%;
+}
+#total {
+    border-bottom: 1px solid black;
+}
+#totalPrice {
+    font-size: 20px;
 }
