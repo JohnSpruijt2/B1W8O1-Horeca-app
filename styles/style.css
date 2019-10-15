@@ -1,5 +1,6 @@
 body {
     background-color: rgb(164, 164, 164);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .billing {
     margin-right: 20px;
@@ -7,7 +8,6 @@ body {
 }
 #title {
     font-size: 80px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: rgba(255, 255, 0, 0.666);
     width: 540px;
     text-align: center;

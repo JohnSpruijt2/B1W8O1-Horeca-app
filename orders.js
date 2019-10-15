@@ -4,6 +4,7 @@ const wijnPrice = 3.49
 const bitterballen2Price = 4.99
 const bitterballen3Price = 8.99
 
+var error = false
 var conti = true
 var fris = 0
 var bier = 0
@@ -24,14 +25,22 @@ while (conti == true) {
             if (bitterballen2 == "stop") {
                 break;
             }
-            document.write(bitterballen2)
+            else if (bitterballen2 <0) {
+                alert("Geen negatieve getallen")
+                error = true
+                break;
+            }
         }
         else if (bitterballen1 == 16) {
             bitterballen3 = prompt("Hoeveel bitterbalschalen van " + bitterballen1 + " stuks wilt u bestellen?")//Hoeveelheid van bitterballen schaal 16
             if (bitterballen3 == "stop") {
                 break;
             }
-            document.write(bitterballen3)
+            else if (bitterballen3 <0) {
+                alert("Geen negatieve getallen")
+                error = true
+                break;
+            }
         }
         else if (bitterballen1 == "stop") {                                                                         //Stop function
             break;
@@ -43,6 +52,11 @@ while (conti == true) {
     }
     else if (order == "fris" ||order == "bier" || order == "wijn") {
         var number = prompt("Hoeveel "+ order +" wilt u toevoegen aan uw bestelling?")
+        if (number <0) {
+            alert("Geen negatieve getallen")
+            error = true
+            break;
+        }
         if (number == "stop") {
             break;
         }
@@ -79,11 +93,17 @@ if (bitterballen2 >0) {
 if (bitterballen3 >0) {
     document.write("<a class='billing'>Bitterballen (16) | " + bitterballen3 + " x  " + bitterballen3Price + "</a><br>")
 }
-var wijnTotal = wijn*wijnPrice
-var bierTotal = bier*bierPrice
-var frisTotal = fris*frisPrice
-var bitterballen2Total = bitterballen2*bitterballen2Price
-var bitterballen3Total = bitterballen3*bitterballen3Price
-var totalPrice = (wijnTotal+bierTotal+frisTotal+bitterballen2Total+bitterballen3Total).toFixed(2);
-document.write("<h2 id='total'>Totaal</h2>")
-document.write("<a id='totalPrice'>€ " + totalPrice)
+
+if (error == true) {
+    alert("An unexpected error occured.\n\n refresh the page and try again later.")
+}
+else {
+    var wijnTotal = wijn*wijnPrice
+    var bierTotal = bier*bierPrice
+    var frisTotal = fris*frisPrice
+    var bitterballen2Total = bitterballen2*bitterballen2Price
+    var bitterballen3Total = bitterballen3*bitterballen3Price
+    var totalPrice = (wijnTotal+bierTotal+frisTotal+bitterballen2Total+bitterballen3Total).toFixed(2);
+    document.write("<h2 id='total'>Totaal</h2>")
+    document.write("<a id='totalPrice'>€ " + totalPrice)
+}
