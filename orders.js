@@ -25,6 +25,7 @@ while (conti == true) {                                                         
         bitterballen1 = prompt("Hoeveel bitterballen wilt u toevoegen (8 of 16)?")                                  //Grote van de schaal van de bitterballen
         if (bitterballen1 == 8) {
             number2 = prompt("Hoeveel bitterbalschalen van " + bitterballen1 + " stuks wilt u bestellen?")          //Hoeveelheid van bitterballen schaal 8
+            bitterballen2 = bitterballen2 + number2
             if (number2 == "stop") {                                                                                //stop function
                 break;
             }
